@@ -1,0 +1,31 @@
+S I N S N O W S T O R M W I
+K L N T S N O W M A N E F E
+A R E C A L P E R I F R I E
+T C G I C A N D L E E R M K
+E F H B G T A O C E E Y I A
+S R R I L H T U Z P A C T L
+T A N O L I B E R I G H T F
+B C D H S L Z E T A N R E W
+O S D E E T T Z L D R I N O
+O E D V L N I S A L S S S N
+T B O L I S C Y Y R S T E S
+S H H W O L E L O W D M C A
+S N A D E C E M B E R A D L
+E L T I S E A S O N G S H T
+
+14
+BLIZZARD    (Row 1, Col 8)
+BOOTS       (Col 1, Row 8)
+CANDLE      (Row 4, Col 5)
+COAT        (Row 5, Col 6)
+DECEMBER    (Row 13 Col 4)
+FIREPLACE   (Row 3, Col 4)
+HILL        (Not in straights)
+MITTENS     (Col 13 Row 4)
+SEASON      (Row 14 Col 5)
+SKATES      (Row 1, Col 4)
+SLEIGHBELLS (Not in straights)
+SNOWMAN     (Row 2, Col 5)
+SNOWSTORM   (Row 1, Col 4)
+WINTER      (Not in straights)
+

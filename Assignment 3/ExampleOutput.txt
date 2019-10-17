@@ -1,0 +1,285 @@
+
+Options:
+Enter 1 to search for names.
+Enter 2 to display data for one name.
+Enter 3 to display all names that appear in only one decade.
+Enter 4 to display all names that appear in all decades.
+Enter 5 to display all names that are more popular in every decade.
+Enter 6 to display all names that are less popular in every decade.
+Enter 7 to quit.
+
+Enter choice: 1
+Enter a name: Sam
+
+The matches with their highest ranking decade are:
+Sam 1900
+
+Options:
+Enter 1 to search for names.
+Enter 2 to display data for one name.
+Enter 3 to display all names that appear in only one decade.
+Enter 4 to display all names that appear in all decades.
+Enter 5 to display all names that are more popular in every decade.
+Enter 6 to display all names that are less popular in every decade.
+Enter 7 to quit.
+
+Enter choice: 1
+Enter a name: Neo
+
+Neo does not appear in any decade.
+
+
+Options:
+Enter 1 to search for names.
+Enter 2 to display data for one name.
+Enter 3 to display all names that appear in only one decade.
+Enter 4 to display all names that appear in all decades.
+Enter 5 to display all names that are more popular in every decade.
+Enter 6 to display all names that are less popular in every decade.
+Enter 7 to quit.
+
+Enter choice: 2
+Enter a name: Jake
+
+Jake: 262 312 323 479 484 630 751 453 225 117 97
+1900: 262
+1910: 312
+1920: 323
+1930: 479
+1940: 484
+1950: 630
+1960: 751
+1970: 453
+1980: 225
+1990: 117
+2000: 97
+
+Options:
+Enter 1 to search for names.
+Enter 2 to display data for one name.
+Enter 3 to display all names that appear in only one decade.
+Enter 4 to display all names that appear in all decades.
+Enter 5 to display all names that are more popular in every decade.
+Enter 6 to display all names that are less popular in every decade.
+Enter 7 to quit.
+
+Enter choice: 2
+Enter a name: Olivia
+
+Olivia: 315 311 290 307 270 355 504 324 193 47 16
+1900: 315
+1910: 311
+1920: 290
+1930: 307
+1940: 270
+1950: 355
+1960: 504
+1970: 324
+1980: 193
+1990: 47
+2000: 16
+
+Options:
+Enter 1 to search for names.
+Enter 2 to display data for one name.
+Enter 3 to display all names that appear in only one decade.
+Enter 4 to display all names that appear in all decades.
+Enter 5 to display all names that are more popular in every decade.
+Enter 6 to display all names that are less popular in every decade.
+Enter 7 to quit.
+
+Enter choice: 3
+Enter decade: 1980
+The names are in order of rank:
+...  ...
+Samantha: 26
+...  ...
+Sam: 467 
+...  ...
+
+Options:
+Enter 1 to search for names.
+Enter 2 to display data for one name.
+Enter 3 to display all names that appear in only one decade.
+Enter 4 to display all names that appear in all decades.
+Enter 5 to display all names that are more popular in every decade.
+Enter 6 to display all names that are less popular in every decade.
+Enter 7 to quit.
+
+Enter choice: 4
+554 names appear in every decade. The names are: 
+Aaron
+Abel
+Abraham
+Adam
+Adolfo
+Adrian
+*** Output trimmed Your program should display all the names.
+
+
+Options:
+Enter 1 to search for names.
+Enter 2 to display data for one name.
+Enter 3 to display all names that appear in only one decade.
+Enter 4 to display all names that appear in all decades.
+Enter 5 to display all names that are more popular in every decade.
+Enter 6 to display all names that are less popular in every decade.
+Enter 7 to quit.
+
+Enter choice: 5
+2 names are more popular in every decade. 
+Eduardo
+Luis
+
+Options:
+Enter 1 to search for names.
+Enter 2 to display data for one name.
+Enter 3 to display all names that appear in only one decade.
+Enter 4 to display all names that appear in all decades.
+Enter 5 to display all names that are more popular in every decade.
+Enter 6 to display all names that are less popular in every decade.
+Enter 7 to quit.
+
+Enter choice: 2
+Enter a name: Luis
+
+Luis: 245 203 154 118 111 108 94 68 60 46 45
+1900: 245
+1910: 203
+1920: 154
+1930: 118
+1940: 111
+1950: 108
+1960: 94
+1970: 68
+1980: 60
+1990: 46
+2000: 45
+
+Options:
+Enter 1 to search for names.
+Enter 2 to display data for one name.
+Enter 3 to display all names that appear in only one decade.
+Enter 4 to display all names that appear in all decades.
+Enter 5 to display all names that are more popular in every decade.
+Enter 6 to display all names that are less popular in every decade.
+Enter 7 to quit.
+
+Enter choice: 6
+27 names are less popular in every decade. 
+Albert
+Alice
+Alma
+Arthur
+Ben
+Carl
+Cecil
+Clarence
+Claude
+Clyde
+Ernest
+Eunice
+Everett
+Frank
+Gladys
+Harry
+Harvey
+Herman
+Hugh
+Irma
+Lester
+Louis
+Marie
+Morris
+Otis
+Rosa
+Theodore
+
+Options:
+Enter 1 to search for names.
+Enter 2 to display data for one name.
+Enter 3 to display all names that appear in only one decade.
+Enter 4 to display all names that appear in all decades.
+Enter 5 to display all names that are more popular in every decade.
+Enter 6 to display all names that are less popular in every decade.
+Enter 7 to quit.
+
+Enter choice: 2
+Enter a name: Otis
+
+Otis: 147 153 171 193 215 272 337 462 611 836 0
+1900: 147
+1910: 153
+1920: 171
+1930: 193
+1940: 215
+1950: 272
+1960: 337
+1970: 462
+1980: 611
+1990: 836
+2000: 0
+
+Options:
+Enter 1 to search for names.
+Enter 2 to display data for one name.
+Enter 3 to display all names that appear in only one decade.
+Enter 4 to display all names that appear in all decades.
+Enter 5 to display all names that are more popular in every decade.
+Enter 6 to display all names that are less popular in every decade.
+Enter 7 to quit.
+
+Enter choice: 2
+Enter a name: Frank
+
+Frank: 8 9 12 16 21 34 44 65 91 152 209
+1900: 8
+1910: 9
+1920: 12
+1930: 16
+1940: 21
+1950: 34
+1960: 44
+1970: 65
+1980: 91
+1990: 152
+2000: 209
+
+Options:
+Enter 1 to search for names.
+Enter 2 to display data for one name.
+Enter 3 to display all names that appear in only one decade.
+Enter 4 to display all names that appear in all decades.
+Enter 5 to display all names that are more popular in every decade.
+Enter 6 to display all names that are less popular in every decade.
+Enter 7 to quit.
+
+Enter choice: 2
+Enter a name: Rosa
+
+Rosa: 88 98 102 114 116 141 168 175 210 247 311
+1900: 88
+1910: 98
+1920: 102
+1930: 114
+1940: 116
+1950: 141
+1960: 168
+1970: 175
+1980: 210
+1990: 247
+2000: 311
+
+Options:
+Enter 1 to search for names.
+Enter 2 to display data for one name.
+Enter 3 to display all names that appear in only one decade.
+Enter 4 to display all names that appear in all decades.
+Enter 5 to display all names that are more popular in every decade.
+Enter 6 to display all names that are less popular in every decade.
+Enter 7 to quit.
+
+Enter choice: 7
+
+
+Goodbye.
