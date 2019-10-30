@@ -68,15 +68,9 @@ class Queens (object):
     
 def main():
   # create a regular chess board
-  try:
+  dim = int(input("Enter the size of board: "))
+  while dim < 1 or dim > 8:
     dim = int(input("Enter the size of board: "))
-  except:
-    pass
-  while dim < 1 or dim > 8 or type(dim) != int:
-    try:
-      dim = int(input("Enter the size of board: "))
-    except:
-      pass
   print("")
   game = Queens(dim)
     
