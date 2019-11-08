@@ -27,12 +27,12 @@ class CircularList(object):
         self.first = None
 
     # Insert an element in the list
-    def insert(self, item):
+    def insert(self, data):
 
-        new_item = Link(item)
+        new_item = Link(data)
         current = self.first
 
-        if (current == None):
+        if current == None:
             self.first = new_item
             new_item.next = new_item
             return
@@ -67,10 +67,10 @@ class CircularList(object):
             previous = current
             current = current.next
 
-        if self.first != self.first.next:
-            self.first = current.next
-        else:
+        if self.first == self.first.next:
             self.first = None
+        else:
+            self.first = current.next
 
         previous.next = current.next
 
@@ -84,9 +84,7 @@ class CircularList(object):
             current = current.next
 
         print(str(current.data))
-
         self.delete(current.data)
-
         return current.next
 
     # Return a string representation of a Circular List
@@ -94,7 +92,7 @@ class CircularList(object):
         s_rep = ""
         current = self.first
         while current.next != self.first:
-            s_rep = s_rep + str(current.data) + " "
+            s_rep = s_rep + str(current.data)
             current = current.next
         return s_rep
 
