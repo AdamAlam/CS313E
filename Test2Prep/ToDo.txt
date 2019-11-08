@@ -1,0 +1,33 @@
+[ ] Linked Lists
+  [ ] Singly
+  [ ] Doubly
+  [ ] Circular
+
+[ ] Hashing
+  [ ] Open Addressing
+  [ ] Closed Addressing
+  [ ] Single Chaining
+  [ ] Probing
+    [ ] Linear Probing
+    [ ] Quadratic Probing
+    [ ] Double Hashing
+
+[ ] Recursion
+  [ ] Backtracking
+    [ ] N Queens
+    [ ] Navigating a Maze
+
+[ ] Programming Approaches
+  [ ] Greedy
+  [ ] Brute Force
+  [ ] Dynamic
+
+[ ] Stacks - LIFO (Last In, First Out)
+  [ ] Push, Pop, Empty
+  [ ] Balancing Parentheses
+  [ ] Postfix and Prefix Operations
+
+[ ] Queues
+  [ ] Enqueue, Dequeue, Empty
+  [ ] Count/Sum elements in a Queue without destroying the list
+  [ ] Reversing a Queue
