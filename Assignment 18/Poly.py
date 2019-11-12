@@ -14,21 +14,23 @@
 
 #  Date Last Modified: November 11 2019
 
+
 class Link (object):
-    def __init__ (self, coeff = 1, exp = 1, next = None):
+    def __init__(self, coeff=1, exp=1, next=None):
         self.coeff = coeff
         self.exp = exp
         self.next = next
 
-    def __str__ (self):
-        return '(' + str (self.coeff) + ', ' + str (self.exp) + ')'
+    def __str__(self):
+        return '(' + str(self.coeff) + ', ' + str(self.exp) + ')'
+
 
 class LinkedList(object):
-    def __init__ (self):
+    def __init__(self):
         self.first = None
 
     # keep Links in descending order of exponents
-    def insert_in_order (self, coeff, exp):
+    def insert_in_order(self, coeff, exp):
         newNode = Link(coeff, exp)
         cur = self.first
         prev = self.first
@@ -50,8 +52,9 @@ class LinkedList(object):
         else:
             cur.next = newNode
         return
+
     # add polynomial p to this polynomial and return the sum
-    def add (self, p):
+    def add(self, p):
         added = LinkedList()
         cur = self.first
         cur_p = p.first
@@ -82,10 +85,8 @@ class LinkedList(object):
                     cur_p = cur_p.next
             added.insert_in_order(coeff, exp)
 
-            
-            
     # multiply polynomial p to this polynomial and return the product
-    def mult (self, p):
+    def mult(self, p):
         multiplied = LinkedList()
         cur = self.first
         while cur != None:
@@ -100,7 +101,7 @@ class LinkedList(object):
         return multiplied
 
     # create a string representation of the polynomial
-    def __str__ (self):
+    def __str__(self):
         cur = self.first
         st = ""
         if cur != None:
@@ -126,7 +127,6 @@ def main():
             except:
                 pass
 
-    
     # create polynomial p
 
     # create polynomial q
@@ -141,14 +141,14 @@ def main():
                 p.insert_in_order(i[0], i[1])
             else:
                 q.insert_in_order(i[0], i[1])
-    
-    
+
     # get sum of p and q and print sum
     print(f"Sum: {str(q.add(p))}")
     print()
-    
+
     # get product of p and q and print product
     print(f"Product: {str(q.mult(p))}")
+
 
 if __name__ == "__main__":
     main()
