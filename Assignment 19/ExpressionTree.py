@@ -1,6 +1,6 @@
 #  File: ExpressionTree.py
 
-#  Description: Using the tree data structure, we can reorder infix into postfix or prefix expression
+#  Description: Using the tree data structure, we can reorder infix expression into postfix or prefix expression
 
 #  Student's Name: Adam Alam
 
@@ -12,7 +12,7 @@
 
 #  Date Created: November 12 2019
 
-#  Date Last Modified: November 13 2019
+#  Date Last Modified: November 15 2019
 
 
 class Stack:
@@ -43,24 +43,24 @@ class Tree(object):
     def create_tree(self, expr):
         eq = expr.split()
         cur = self.root
-        par = Stack()
+        parentheses = Stack()
         operators = ['+', '-', '*', '/', '//', '%', '**']
         for token in eq:
             if token == "(":
-                par.push(cur)
+                parentheses.push(cur)
                 cur.lchild = Node()
                 cur = cur.lchild
             elif token in operators:
                 cur.data = token
-                par.push(cur)
+                parentheses.push(cur)
                 cur.rchild = Node()
                 cur = cur.rchild
             elif is_num(token):
                 cur.data = token
-                cur = par.pop()
+                cur = parentheses.pop()
             elif token == ")":
-                if par.is_empty() is False:
-                    cur = par.pop()
+                if parentheses.is_empty() is False:
+                    cur = parentheses.pop()
                 else:
                     break
 
@@ -105,11 +105,9 @@ def main():
     with open("expression.txt") as f:
         expression = f.readline()
     expression = expression.strip()
-
     tree = Tree()
     tree.create_tree(expression)
     print(f"{expression} = {tree.evaluate(tree.root)}\n")
-
     print("Prefix Expression: ", end='')
     tree.pre_order(tree.root)
     print()
