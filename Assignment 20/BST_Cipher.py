@@ -1,6 +1,6 @@
 #  File: BST_Cipher.py
 
-#  Description:
+#  Description: Using a binary tree, we can encrypt and decrypt strings.
 
 #  Student Name: Adam Alam
 
@@ -70,15 +70,19 @@ class Tree:
                 cur = cur.lchild
         return dup
 
+
+
+
+
     # the search() function will search for a character in the binary
     # search tree and return a string containing a series of lefts
     # (<) and rights (>) needed to reach that character. It will
     # return a blank string if the character does not exist in the tree.
     # It will return * if the character is the root of the tree.
     def search(self, ch):
+        cur = self.root
         if self.exists(ch) is False:
             return ""
-        cur = self.root
         if ch == cur.data:
             return "*"
         filtered = ""
@@ -121,7 +125,7 @@ class Tree:
         enc = ""
         for char in filtered:
             enc += str(self.search(char)) + "!"
-        return enc[:-1]
+        return enc[:len(enc) - 1]
 
     # the decrypt() function will take a string as input parameter, and
     # return the decrypted string.
@@ -132,10 +136,10 @@ class Tree:
             if char in direction:
                 filtered += char
         pathList = filtered.split("!")
-        dec = ""
+        decrypted = ""
         for path in pathList:
-            dec += self.traverse(path)
-        return dec
+            decrypted += self.traverse(path)
+        return decrypted
 
 
 def main():
