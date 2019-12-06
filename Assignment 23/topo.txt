@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 14
 m
 n
@@ -34,4 +35,42 @@ u t
 v w
 v x
 w z
+=======
+14
+m
+n
+o
+p
+q
+r
+s
+t
+u
+v
+w
+x
+y
+z
+21
+m q
+m r
+m x
+n o
+n q
+n u
+o r
+o s
+o v
+p o
+p s
+p z
+q t
+r u
+r y
+s r
+u t
+v w
+v x
+w z
+>>>>>>> b72f3accf3a92d58ed629a786de80a003bb12b73
 y v
