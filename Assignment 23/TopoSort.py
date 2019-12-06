@@ -1,6 +1,6 @@
-#  File: Graph.py
+#  File: TopoSort.py
 
-#  Description: Wrote functions for DFS and BFS and various methods for the graph class
+#  Description: We use a new method of sorting on an directed unweighted graph
 
 #  Student Name: Adam Alam
 
@@ -10,9 +10,11 @@
 
 #  Unique Number: 50205
 
-#  Date Created: November 23 2019
+#  Date Created: November 29 2019
 
-#  Date Last Modified: November 25 2019
+#  Date Last Modified: December 2 2019
+
+from copy import deepcopy
 
 
 class Stack:
@@ -65,11 +67,59 @@ class Edge:
         self.weight = weight
 
 
-class Graph (object):
+class Graph:
     def __init__(self):
         self.Vertices = []
         self.edges = []
         self.adj_mat = []
+
+    # determine if a directed graph has a cycle
+    # this function should return a boolean and not print the result
+    def has_cycle(self):
+        the_stack = Stack()
+        nVert = len(self.Vertices)
+        for i in range(nVert):
+            if self.Vertices[i].visited is False and self.has_cycle_help(i, the_stack):
+                return True
+        return False  # Return boolean
+
+    # recursive helper for has_cycle()
+    def has_cycle_help(self, v, stack):
+        self.Vertices[v].visited = True
+        stack.push(self.Vertices[v])
+        for vertex in self.get_neighbors(self.Vertices[v]):
+            if not vertex.visited and self.has_cycle_help(vertex, stack):
+                return True
+            elif vertex.visited and stack[vertex]:
+                return True
+        self.visit_reset()
+
+    # return a list of vertices after a topological sort
+    # this function should not print the list
+    def toposort(self):
+        graph_copy = deepcopy(self)
+        sort_visited = []
+        to_del = []
+        idx = 0
+        nVert = len(graph_copy.Vertices)
+        while nVert > 0:
+            idx = 0
+            while nVert > idx:
+                visited = False
+                vertex_label = graph_copy.Vertices[idx].label
+                for i in range(nVert):
+                    if graph_copy.adj_mat[i][idx] == 1:
+                        visited = True
+                        break
+                if not visited:
+                    sort_visited.append(vertex_label)
+                    to_del.append(vertex_label)
+                idx += 1
+            while len(to_del) > 0:
+                graph_copy.delete_vertex(to_del[0])
+                to_del.pop(0)
+                nVert -= 1
+        return sort_visited
 
     # check if a vertex is already in the graph
     def has_vertex(self, label):
@@ -149,9 +199,9 @@ class Graph (object):
                 return i
         return -1
 
-    # get a copy of the list of Vertex objects
+    # get a graph_copy of the list of Vertex objects
     def get_vertices(self):
-        return self.Vertices.copy()
+        return self.Vertices.graph_copy()
 
     # do a depth first search in a graph starting at vertex v (index)
     def dfs(self, v):
@@ -208,65 +258,25 @@ class Graph (object):
 
 
 def main():
-    cities = Graph()
-
-    in_file = open("graph.txt", "r")
-
-    nVert = int(in_file.readline().strip())
-
+    graph = Graph()
+    f = open("topo.txt", "r")
+    nVert = int(f.readline().strip())
     for i in range(nVert):
-        city = in_file.readline().strip()
-        cities.add_vertex(city)
+        graph.add_vertex(f.readline().strip())
+    nEdges = int(f.readline().strip())
+    for i in range(nEdges):
+        edge = f.readline().strip().split()
+        s_idx = int(graph.get_index(edge[0]))
+        f_idx = int(graph.get_index(edge[1]))
+        graph.add_directed_edge(s_idx, f_idx)
 
-    num_edges = int(in_file.readline().strip())
-    for i in range(num_edges):
-        edge = in_file.readline().strip()
-        edge = edge.split()
-        cities.add_directed_edge(int(edge[0]), int(edge[1]), int(edge[2]))
-
-    start_vertex = (in_file.readline().strip())
-    start_idx = cities.get_index(start_vertex)
-
-    # test depth first search
-    print("Depth First Search")
-    cities.dfs(start_idx)
-    print()
-
-    # test breadth first search
-    print("Breadth First Search")
-    cities.bfs(start_idx)
-    print()
-
-    # test deletion of an edge
-    edges = in_file.readline().strip()
-    edges = edges.split()
-    print("Deletion of an edge\n")
-    cities.delete_edge(edges[0], edges[1])
-    print("Adjacency Matrix")
-    for i in range(nVert):
-        for j in range(nVert):
-            print(cities.adj_mat[i][j], end=" ")
-        print()
-    print()
-
-    # test deletion of a vertex
-    print("Deletion of a vertex\n")
-    del_vert = in_file.readline().strip()
-    cities.delete_vertex(del_vert)
-    nVert -= 1
-    print("List of Vertices")
-    for i in cities.Vertices:
-        print(i)
-    print()
-    print("Adjacency Matrix")
-    for i in range(nVert):
-        for j in range(nVert):
-            print(cities.adj_mat[i][j], end=" ")
-        print()
-    print()
-
-    in_file.close()
+    if not graph.has_cycle() and nVert > 0:
+        print("The Graph does not have a cycle.\n")
+        print("List of vertices after toposort")
+        print(graph.toposort())
+    else:
+        print("The Graph does have a cycle")
+    f.close()
 
 
-if __name__ == "__main__":
-    main()
+main()
