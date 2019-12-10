@@ -24,32 +24,32 @@ class Triangle:
 
 # returns the greatest path sum using exhaustive search
 def exhaustive_search(grid):
-    emp = []
-    exh_help(grid, 0, 0, 0, emp)
-    return max(emp)
+    empty = []
+    exh_help(grid, 0, 0, 0, empty)
+    return max(empty)
 
 
 # helper function for exhaustive search
-def exh_help(grid, vertical, horizontal, t_sum, emp):
+def exh_help(grid, vertical, horizontal, t_sum, empty):
     if vertical == len(grid):
-        emp.append(t_sum)
+        empty.append(t_sum)
     else:
-        exh_help(grid, vertical + 1, horizontal, t_sum + grid[vertical][horizontal], emp)
-        exh_help(grid, vertical + 1, horizontal + 1, t_sum + grid[vertical][horizontal], emp)
-    return emp
+        exh_help(grid, vertical + 1, horizontal, t_sum + grid[vertical][horizontal], empty)
+        exh_help(grid, vertical + 1, horizontal + 1, t_sum + grid[vertical][horizontal], empty)
+    return empty
 
 
 # returns the greatest path sum using greedy approach
 def greedy(grid):
     t_sum = 0
-    c = 0
+    horizontal = 0
     t_sum += grid[0][0]
-    for r in range(len(grid) - 1):
-        if grid[r + 1][c] > grid[r + 1][c + 1]:
-            t_sum += grid[r + 1][c]
+    for vertical in range(len(grid) - 1):
+        if grid[vertical + 1][horizontal] > grid[vertical + 1][horizontal + 1]:
+            t_sum += grid[vertical + 1][horizontal]
         else:
-            t_sum += grid[r + 1][c + 1]
-            c += 1
+            t_sum += grid[vertical + 1][horizontal + 1]
+            horizontal += 1
     return t_sum
 
 
