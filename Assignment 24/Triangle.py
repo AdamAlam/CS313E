@@ -17,11 +17,6 @@
 import time
 
 
-class Triangle:
-    def __init__(self):
-        return
-
-
 # returns the greatest path sum using exhaustive search
 def exhaustive_search(grid):
     empty = []
