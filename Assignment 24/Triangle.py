@@ -8,7 +8,7 @@
 
 #  Course Name: CS 313E
 
-#  Unique Number: 50305
+#  Unique Number: 50205
 
 #  Date Created: December 4 2019
 
@@ -25,27 +25,27 @@ def exhaustive_search(grid):
 
 
 # helper function for exhaustive search
-def exh_help(grid, vertical, horizontal, t_sum, empty):
+def exh_help(grid, vertical, horizontal, greedy_sum, empty):
     if vertical == len(grid):
-        empty.append(t_sum)
+        empty.append(greedy_sum)
     else:
-        exh_help(grid, vertical + 1, horizontal, t_sum + grid[vertical][horizontal], empty)
-        exh_help(grid, vertical + 1, horizontal + 1, t_sum + grid[vertical][horizontal], empty)
+        exh_help(grid, vertical + 1, horizontal, greedy_sum + grid[vertical][horizontal], empty)
+        exh_help(grid, vertical + 1, horizontal + 1, greedy_sum + grid[vertical][horizontal], empty)
     return empty
 
 
 # returns the greatest path sum using greedy approach
 def greedy(grid):
-    t_sum = 0
+    greedy_sum = 0
     horizontal = 0
-    t_sum += grid[0][0]
+    greedy_sum += grid[0][0]
     for vertical in range(len(grid) - 1):
         if grid[vertical + 1][horizontal] > grid[vertical + 1][horizontal + 1]:
-            t_sum += grid[vertical + 1][horizontal]
+            greedy_sum += grid[vertical + 1][horizontal]
         else:
-            t_sum += grid[vertical + 1][horizontal + 1]
+            greedy_sum += grid[vertical + 1][horizontal + 1]
             horizontal += 1
-    return t_sum
+    return greedy_sum
 
 
 # returns the greatest path sum using divide and conquer(recursive) approach
@@ -53,6 +53,7 @@ def rec_search(grid):
     return rec_search_helper(grid, 0, 0)
 
 
+# helper function for divide and conquer
 def rec_search_helper(grid, vertical, horizontal):
     if vertical == len(grid) - 1:
         return grid[vertical][horizontal]
